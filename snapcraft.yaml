@@ -1,0 +1,20 @@
+name: config-example
+version: 1.0
+vendor: VXiaoguo, Liu <xiaoguo.liu@canonical.com>
+summary: This is an example for config
+description: This example provide a way showing how to do configuration on snappy system
+icon: icon.png
+
+binaries:
+  hello:
+    exec: bin/hello
+config: usr/bin/config.py
+
+parts:
+  config:
+    plugin: python3
+    source: .
+  hello:
+    plugin: copy
+    files:
+      ./bin/hello: bin/hello
